@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+  	
+     <bean id="UserDAOJDBCTemplate" class="peopleMoverDB.dao.UserDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="UnitDAOJDBCTemplate" class="peopleMoverDB.dao.UnitDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="LocationDAOJDBCTemplate" class="peopleMoverDB.dao.LocationDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="StopsDAOJDBCTemplate" class="peopleMoverDB.dao.StopsDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="RouteDAOJDBCTemplate" class="peopleMoverDB.dao.RouteDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="WayPointsDAOJDBCTemplate" class="peopleMoverDB.dao.WayPointsDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="AlertDAOJDBCTemplate" class="peopleMoverDB.dao.AlertDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="StopTimesDAOJDBCTemplate" class="peopleMoverDB.dao.StopTimesDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="WayPointsAfterDAOJDBCTemplate" class="peopleMoverDB.dao.WayPointsAfterDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+     <bean id="FavoriteDAOJDBCTemplate" class="peopleMoverDB.dao.FavoriteDAOImpl">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/pmdb" />
+        <property name="username" value="root" />
+        <property name="password" value="ppmmysql"/>
+    </bean>
+ 
+</beans>

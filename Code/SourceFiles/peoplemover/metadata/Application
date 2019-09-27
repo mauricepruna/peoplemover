@@ -1,0 +1,75 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController",
+            "UnitListController",
+            "UserController",
+            "MapController",
+            "StopController",
+            "AlertsController"
+        ],
+        "models": [
+            "routeInfo",
+            "UnitList",
+            "MapLocations",
+            "MiddleNorthModel",
+            "HighNorthModel",
+            "HighSouthModel",
+            "MiddleSouthModel"
+        ],
+        "name": "PeopleMover",
+        "requires": [
+            "Ext.device.Camera"
+        ],
+        "stores": [
+            "listRoutes",
+            "UnitListStore",
+            "MapStore",
+            "MiddleNorthStore"
+        ],
+        "views": [
+            "RouteDetailsList",
+            "FeedBackView",
+            "Problem",
+            "requestStop",
+            "MyNavigationView",
+            "UnitListView",
+            "MyMap",
+            "LoginForm",
+            "RegisterForm",
+            "MainView",
+            "MiddleNorthView",
+            "AboutUs",
+            "EstTimeView",
+            "ServiceTimes",
+            "TrolleyAlerts"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.fly('appLoadingImage').destroy();",
+                    "      Ext.fly('appLoadingIndicator').destroy();"
+                ]
+            },
+            "name": "launch",
+            "designerId": "c6f70a42-59d7-4511-9cf3-59f91e0c92d0"
+        }
+    ]
+}

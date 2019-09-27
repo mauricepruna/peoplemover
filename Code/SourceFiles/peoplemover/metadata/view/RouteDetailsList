@@ -1,0 +1,106 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultType": null,
+        "designer|userAlias": "DetailList",
+        "designer|userClassName": "RouteDetailsList",
+        "id": "titeList"
+    },
+    "name": "MyList2",
+    "designerId": "1205bcdd-2929-4dc1-958a-5e97472df2df",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div>List Item {string}</div>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "a3bba405-e8e5-4096-807f-12c06ef2dea9"
+        },
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "id": "titleList",
+                "title": null
+            },
+            "name": "MyTitleBar2",
+            "designerId": "9b72ebc9-1b3c-42c1-9967-f85b5db9751d",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "back",
+                        "docked": "top",
+                        "id": null,
+                        "itemId": "mybutton",
+                        "text": "Back",
+                        "ui": "back"
+                    },
+                    "name": "MyButton",
+                    "designerId": "676139f5-dd7d-4c8d-b4d9-70f9c2dd4670",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBackButtonTap",
+                                "implHandler": [
+                                    "var sample = Ext.create('widget.main');",
+                                    "Ext.getCmp('myTabPanel').setActiveItem(0);",
+                                    "Ext.Viewport.remove(Ext.Viewport.getActiveItem(), true);",
+                                    "    Ext.Viewport.setActiveItem(sample);",
+                                    ""
+                                ],
+                                "name": "tap",
+                                "order": "before"
+                            },
+                            "name": "onBackButtonTap",
+                            "designerId": "bc6e51ea-d280-412e-8c85-e71475bf1886"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "name": "MyPanel",
+            "designerId": "52e06e35-5e3d-4e73-b5ae-4b92df5e4e97"
+        }
+    ]
+}

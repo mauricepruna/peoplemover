@@ -1,0 +1,88 @@
+{
+    "name": "PeopleMover",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "5.0.2.270",
+            "frameworkVersion": "2.3.1.410"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": false,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true,
+        "lockUrlPrefix": true,
+        "installStatus": "Not Installed",
+        "displayfield-ExtBox1-1117-inputEl": "a new version of the framework is available"
+    },
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1934,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000007,
+    "framework": "touch23",
+    "viewOrderMap": {
+        "view": [
+            "75b50ce4-7a85-4c85-b691-411d105cbc13",
+            "6f9a458a-f649-4141-845c-4dc2a4e35858",
+            "96abc566-6212-415a-addd-61d22a008a69",
+            "30a95818-6e87-42c5-b8f4-a00377865fe0",
+            "3098e783-82f2-4708-92f3-624d0882be80",
+            "1205bcdd-2929-4dc1-958a-5e97472df2df",
+            "1d8d8aff-4048-482c-b080-9c766c92b530",
+            "aa691015-8560-4423-a5b8-7d8135dd3662",
+            "ffee90c4-6fab-49c3-bbd9-adf2b9ae246b",
+            "5d7dc174-2f91-48db-9505-ad621e7718a5",
+            "0b50498d-d26b-4159-8511-cb0367ce57da",
+            "4bac8be0-29e9-45d0-8423-9155919d6b62",
+            "3bde5ad3-96b1-40b0-8a63-59121a74ee1d",
+            "8ef82987-cfd0-4b4c-9bf7-737a0674d400",
+            "d1e32daf-2e21-4e25-b423-422e035e308f"
+        ],
+        "store": [
+            "827541cd-ccfa-41f5-b35f-54a76b6d3bdb",
+            "27c31d0f-ba0c-4421-ba66-2aed1b5bd649",
+            "e7963bb7-23d5-4a8d-ba33-ae29456e593d",
+            "66cebd73-7f7c-4723-bc1c-041831277768"
+        ],
+        "controller": [
+            "61ffb653-7b0b-4839-b28b-323c8c421c50",
+            "dfe260c7-cb46-4370-8e22-66be4562bd72",
+            "074a0b64-631d-4879-95e8-b763b3ef6e7e",
+            "76e0b36e-f4f4-4306-b070-9d57900fe5a7",
+            "017cf5a7-3ac9-40bc-a166-0eb34d3b099a",
+            "a2bd6fb7-2a81-4a6c-a9b1-f64591afb834"
+        ],
+        "model": [
+            "23111290-0328-43b9-8bd4-a9d64d6a92e6",
+            "b27dd0a2-49c2-4fdd-8b50-104e53418266",
+            "6918f9f8-5453-4ec1-bd82-b8cb3c26bcf6",
+            "891ab2c5-9678-4bfd-9b58-70b5aa4043b3",
+            "edb6b171-1d39-405d-b70a-4752b7f04acc",
+            "c687fb38-6e1a-4ea9-bee5-8eb7363810f1",
+            "e1e43146-9aa2-4e1a-b367-63723d8d73d9"
+        ],
+        "resource": [
+            "a86db317-5800-4f6c-87ac-cc0c86316c9d",
+            "e1c306ac-880c-4764-97fd-d104b14df3e5",
+            "ccc92caf-3edd-40a7-b949-333b6cad7e99",
+            "0cbff08c-2477-4bc2-935e-5eddb4c1c800"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

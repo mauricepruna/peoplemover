@@ -1,0 +1,14 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "servicetimes",
+        "designer|userClassName": "ServiceTimes"
+    },
+    "name": "MyContainer4",
+    "designerId": "1d8d8aff-4048-482c-b080-9c766c92b530"
+}

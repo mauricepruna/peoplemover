@@ -1,0 +1,66 @@
+
+{
+    "info":
+[
+    {
+        "title": "Main Menu",
+        "items": [
+            {
+                "text": "Near Me",
+                "url": "kitchensink/index.html",
+                "iconLocation": "kitchensink/resources/icons",
+                "device": "tablet",
+                "desc": "(Closest Stop)",
+                "status": "updated"
+            },
+            {
+                "text": "Easy Tracker",
+                "url": "map/index.html",
+                "iconLocation": "map/resources/icons",
+                "device": "phone",
+                "desc": "Real Time Tracking"
+            },
+            {
+                "text": "Trolley Tracker",
+                "url": "http://agile-anchorage-2261.herokuapp.com",
+                "iconLocation": "jog-with-friends/resources/images",
+                "device": "phone",
+                "desc": "A Facebook example which allows you to share when you jog.",
+                "status": "updated"
+            },
+            {
+                "text": "Route Map",
+                "url": "oreilly/index.html",
+                "iconLocation": "oreilly/resources/icons",
+                "device": "phone",
+                "desc": "Sample conference application with a connection to remote backend data.",
+                "status": "updated"
+            },
+            {
+                "text": "My Favorite Stops",
+                "url": "touchtomatoes/index.html",
+                "iconLocation": "touchtomatoes/resources/icons",
+                "device": "phone",
+                "desc": "Rotten Tomatoes application featuring Intro Overlay, JSONP and AJAX Search.",
+                "status": "new"
+            },
+            {
+                "text": "Trolley Status Alerts",
+                "url": "touchstyle/index.html",
+                "iconLocation": "touchstyle/resources/icons",
+                "device": "phone",
+                "desc": "Example of dynamic carousel and device profiles",
+                "status": "new"
+            },
+            {
+                "text": "More...",
+                "url": "oreilly/index.html",
+                "iconLocation": "oreilly/resources/icons",
+                "device": "phone",
+                "desc": "Sample conference application with a connection to remote backend data.",
+                "status": "updated"
+            }
+        ]
+    }
+]
+}

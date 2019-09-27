@@ -1,0 +1,108 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MiddleNorthModel"
+    },
+    "name": "MyModel",
+    "designerId": "891ab2c5-9678-4bfd-9b58-70b5aa4043b3",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "stopId",
+                "type": "int"
+            },
+            "name": "field",
+            "designerId": "a82948a9-7049-463c-83a4-4fed6cd215e9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "routeId"
+            },
+            "name": "field27",
+            "designerId": "c6413c53-383e-46ea-bb23-d26bd9bd6a9a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "street"
+            },
+            "name": "field28",
+            "designerId": "c1ba8375-c159-4b10-9d94-feed82a59e37"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "latitude"
+            },
+            "name": "field29",
+            "designerId": "925e783a-5bf9-4211-b1ea-a89ca9981d58"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "longitude"
+            },
+            "name": "field30",
+            "designerId": "8cfc8771-ea20-4733-bed1-1737da5160f4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "scheduledTime"
+            },
+            "name": "field31",
+            "designerId": "616c6d8e-0295-468e-a1d7-c764260dd494"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://pm-dev.cs.fiu.edu:8080/ppmws/getstops?RouteId=1",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyRestProxy1",
+            "designerId": "6f6a0a27-2ee4-4b77-9b0d-4517c0273b8c"
+        }
+    ]
+}

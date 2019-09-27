@@ -1,0 +1,385 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView",
+        "id": null
+    },
+    "name": "MyContainer",
+    "designerId": "6f9a458a-f649-4141-845c-4dc2a4e35858",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeItem": 2,
+                "docked": null,
+                "id": "myTabPanel",
+                "itemId": "myTabPanel"
+            },
+            "name": "MyTabPanel",
+            "designerId": "b63ce7c6-3fc0-4983-b74b-e8e1b2e4bdb2",
+            "cn": [
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|pack": "center",
+                        "docked": "bottom"
+                    },
+                    "name": "MyTabBar",
+                    "designerId": "b64c026b-a8be-4216-bda2-6fefd9a9bac9"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": null,
+                        "html": null,
+                        "iconCls": "info",
+                        "title": "Routes"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "f079e2b9-f3e3-425e-a27c-1e30746f748c",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "height": "50px",
+                                "itemId": "bhighnorth",
+                                "style": "background: white",
+                                "text": "Palmetto High North Route"
+                            },
+                            "name": "MyButton9",
+                            "designerId": "362d81ec-e5b2-473a-8b16-4761accc95bf"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "height": "50px",
+                                "itemId": "bhighsouth",
+                                "style": "background: white",
+                                "text": "Palmetto High South Route"
+                            },
+                            "name": "MyButton10",
+                            "designerId": "646e0547-4a49-47f6-914c-47ecd4a43dcf"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "height": "50px",
+                                "itemId": "bmiddlenorth",
+                                "style": "background: white",
+                                "text": "Palmetto Middle North Route"
+                            },
+                            "name": "MyButton11",
+                            "designerId": "19bb4aff-716b-4b42-ac68-a985a9e2984d"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "designer|uiInterfaceName": "normal",
+                                "height": "50px",
+                                "itemId": "bmiddlesouth",
+                                "style": "background: white",
+                                "text": "Palmetto Middle South Route"
+                            },
+                            "name": "MyButton12",
+                            "designerId": "540a4012-2884-428e-8579-7a0328ee8e86"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "organize",
+                        "title": "Position"
+                    },
+                    "name": "unitlistview",
+                    "designerId": "b71decad-1bb2-4fe8-b241-18ea6c9510ff",
+                    "masterInstanceId": "ffee90c4-6fab-49c3-bbd9-adf2b9ae246b"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "maps",
+                        "title": "Near Me"
+                    },
+                    "name": "mymap",
+                    "designerId": "714829fb-617a-43e8-8b9e-dbe7f71d012d",
+                    "masterInstanceId": "5d7dc174-2f91-48db-9505-ad621e7718a5"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "info",
+                        "id": "btrolleyalerts",
+                        "itemId": "btrolleyalerts",
+                        "title": "Trolley Alerts"
+                    },
+                    "name": "trolleyalerts",
+                    "designerId": "9b0cc99a-9aba-4fcd-8b0b-a40accbe617e",
+                    "masterInstanceId": "d1e32daf-2e21-4e25-b423-422e035e308f"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "iconCls": "more",
+                        "padding": "",
+                        "title": "More"
+                    },
+                    "name": "MyContainer3",
+                    "designerId": "ed008cdb-6337-4156-a373-685020dc4f68",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "bottom": null,
+                                "designer|uiInterfaceName": "normal",
+                                "height": "50px",
+                                "iconCls": "team",
+                                "itemId": "aboutUs",
+                                "padding": null,
+                                "style": "background: white",
+                                "text": "About Us"
+                            },
+                            "name": "MyButton2",
+                            "designerId": "8e79db6b-33d4-4aa1-b49a-65bc7438007b"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "designer|uiInterfaceName": "normal",
+                                "height": "50px",
+                                "iconCls": "info",
+                                "itemId": "reportProblem",
+                                "style": "background:white",
+                                "text": "Report a Problem"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "9599e009-b69f-4efe-90e0-f69e365e06ac"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "designer|uiInterfaceName": "normal",
+                                "height": "50px",
+                                "iconCls": "add",
+                                "itemId": "requestStop",
+                                "style": "background:white",
+                                "text": "Request A Stop"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "362379ed-ae60-45be-8f75-81e1f1944be5"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "designer|uiInterfaceName": "normal",
+                                "height": "50px",
+                                "iconCls": "reply",
+                                "itemId": "feedback",
+                                "style": "background:white",
+                                "text": "Enter Feedback"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "8005efc4-918d-4d01-b30d-ce3896c1cb0a"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "height": "50px",
+                                "iconCls": "info",
+                                "itemId": "trolleyAlerts",
+                                "style": "background:white",
+                                "text": "Service Times"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "d2439bba-b3c4-4d95-a615-c6480c0400c6"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "height": "50px",
+                                "iconCls": "user",
+                                "id": "showLoginButton",
+                                "itemId": "showLoginButton",
+                                "style": "background:white",
+                                "text": "Login"
+                            },
+                            "name": "MyButton14",
+                            "designerId": "2d4c3b40-3e75-44fe-984f-6ea99cce72a6"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": 1,
+                                "height": "50px",
+                                "iconCls": "user",
+                                "id": "showRegisterButton",
+                                "itemId": "showRegisterButton",
+                                "style": "background:white",
+                                "text": "Registration"
+                            },
+                            "name": "MyButton16",
+                            "designerId": "449c47c6-d30d-420a-a32b-89b42b29a063"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "name": "MyNavigationBar",
+            "designerId": "b3e3d0e1-42b2-40c5-9eb0-c4b13bb30635",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "docked": "top",
+                        "id": null,
+                        "title": null
+                    },
+                    "name": "MyTitleBar",
+                    "designerId": "404937dd-a3ae-456d-962d-9eedcdc7de12",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": null,
+                                "height": 52,
+                                "src": "resources/images/word_pvlogo.png",
+                                "width": 150
+                            },
+                            "name": "MyImg",
+                            "designerId": "ec53c565-2707-438e-b892-09d9ad090726"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

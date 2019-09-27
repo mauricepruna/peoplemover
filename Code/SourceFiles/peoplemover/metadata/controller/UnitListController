@@ -1,0 +1,56 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UnitListController",
+        "models": [
+            "UnitList"
+        ],
+        "requires": [
+            "Ext.util.DelayedTask"
+        ],
+        "stores": [
+            "UnitListStore"
+        ],
+        "views": [
+            "UnitListView"
+        ]
+    },
+    "name": "MyController1",
+    "designerId": "dfe260c7-cb46-4370-8e22-66be4562bd72",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    " var autocallFunction = function() {",
+                    "            var task = Ext.create('Ext.util.DelayedTask', function() {",
+                    "                var list = Ext.getCmp('unitlistview');",
+                    "                list.getStore().load();",
+                    "                list.refresh();",
+                    "                //console.log('callback!');",
+                    "                autocallFunction.call(this);",
+                    "            }, this);",
+                    "",
+                    "            task.delay(10000);",
+                    "        };",
+                    "",
+                    "",
+                    "        autocallFunction();"
+                ]
+            },
+            "name": "launch",
+            "designerId": "9ce10c87-38c2-4b42-a948-f5fa0bb86d41"
+        }
+    ]
+}

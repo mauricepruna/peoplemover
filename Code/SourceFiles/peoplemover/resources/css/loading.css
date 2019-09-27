@@ -1,0 +1,25 @@
+#appLoadingImage
+        {
+            /*position: relative;
+            top: 10%;
+            margin-top: -15px;
+            text-align: center;
+          
+            height: 30px;
+            -webkit-animation-name: appLoadingImage;
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+            background-image: url("../images/load1.png");*/
+            background-image: url("../images/load1.png");
+            background-repeat:no-repeat;
+            background-position: center top; 
+            /*margin-top: 15px;*/
+           
+          
+             height: 100%;
+            -webkit-animation-name: appLoadingImage;
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+}

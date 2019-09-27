@@ -1,0 +1,13 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HighNorthModel"
+    },
+    "name": "MyModel",
+    "designerId": "edb6b171-1d39-405d-b70a-4752b7f04acc"
+}

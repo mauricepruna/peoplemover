@@ -1,0 +1,17 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "MiddleNorthStore",
+        "model": "MiddleNorthModel",
+        "remoteSort": true,
+        "storeId": "MiddleNorthStore"
+    },
+    "name": "MyStore",
+    "designerId": "66cebd73-7f7c-4723-bc1c-041831277768"
+}

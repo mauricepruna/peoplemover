@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "UnitListStore",
+        "model": "UnitList",
+        "storeId": "UnitListStore"
+    },
+    "name": "MyStore",
+    "designerId": "27c31d0f-ba0c-4421-ba66-2aed1b5bd649",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "id"
+            },
+            "name": "MySorter",
+            "designerId": "d0b0dbad-1891-4176-a83a-625dae4b2ef3"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "unitID"
+            },
+            "name": "MySorter1",
+            "designerId": "62520b77-386f-475b-ad3d-2b74b717ee78"
+        }
+    ]
+}

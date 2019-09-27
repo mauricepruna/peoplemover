@@ -1,0 +1,59 @@
+[
+	{
+		"name": "SW 67th Ave at 94th St",
+		"time": "8:33AM"
+	},
+	{
+		"name": "SW 73rd Ct at 98th St",
+		"time": "8:35AM"
+	},
+	{
+		"name": "SW 104th St at 72nd Ave",
+		"time": "8:37AM"
+	},
+	{
+		"name": "SW 106th St at 71st Ave",
+		"time": "8:38AM"
+	},
+	{
+		"name": "SW 72nd Ave at 108th Terr",
+		"time": "8:38AM"
+	},
+	{
+		"name": "SW 74th Ave at 109th Terr",
+		"time": "8:39AM"
+	},
+	{
+		"name": "Flagler Grove Park<br/>7551 Sw 104th St",
+		"time": "8:40AM"
+	},
+	{
+		"name": "SW 77th Ave at 110th St",
+		"time": "8:42AM"
+	},
+	{
+		"name": "SW 112th St at 72nd Ct",
+		"time": "8:44AM"
+	},
+	{
+		"name": "SW 120th St at 65th Ave",
+		"time": "8:48AM"
+	},
+	{
+		"name": "SW 120th St at 67th Ct",
+		"time": "8:50AM"
+	},
+	{
+		"name": "SW 77th Ave at 122nd St",
+		"time": "8:53AM"
+	},
+	{
+		"name": "SW 124th St at 74th Ct",
+		"time": "8:55AM"
+	},
+	{
+		"name": "Palmetto Middle School",
+		"time":"9:00AM"
+
+	}
+]

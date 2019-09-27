@@ -1,0 +1,85 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "loginform",
+        "designer|userClassName": "LoginForm",
+        "requires": [
+            "Ext.form.FieldSet",
+            "Ext.field.Email",
+            "Ext.Button"
+        ]
+    },
+    "name": "MyFormPanel",
+    "designerId": "0b50498d-d26b-4159-8511-cb0367ce57da",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Login"
+            },
+            "name": "MyFieldSet1",
+            "designerId": "3c057b17-8c0d-4b95-b48d-8ecad07d6a79",
+            "cn": [
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Email",
+                        "labelWidth": "40%",
+                        "name": "email",
+                        "placeHolder": "email@example.com"
+                    },
+                    "name": "MyEmailField",
+                    "designerId": "ec8a6876-a775-41e8-8ebb-b6b9984d322a"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Password",
+                        "labelWidth": "40%",
+                        "name": "password"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "f4a344ef-a3ba-49a9-8fb9-5effd5d20a83"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "confirm",
+                "itemId": "loginButton",
+                "margin": 20,
+                "padding": 8,
+                "text": "Login",
+                "ui": "confirm"
+            },
+            "name": "MyButton15",
+            "designerId": "3f5080c6-b078-494e-b971-f36c76521c7f"
+        }
+    ]
+}

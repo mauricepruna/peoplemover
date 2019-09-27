@@ -1,0 +1,72 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MapLocations",
+        "requires": [
+            "Ext.data.Field",
+            "Ext.data.proxy.Rest"
+        ]
+    },
+    "name": "MyModel",
+    "designerId": "6918f9f8-5453-4ec1-bd82-b8cb3c26bcf6",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lastLatitude"
+            },
+            "name": "field",
+            "designerId": "a9bc6b16-520c-424e-ba84-006ed7d88e90"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lastLongitude"
+            },
+            "name": "field27",
+            "designerId": "b7a6f73a-3d4f-4f25-beb2-b41b59baa368"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://pm-dev.cs.fiu.edu:8080/ppmws/getunitlist",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyRestProxy1",
+            "designerId": "859ecc53-4968-4281-a90a-db6770093299"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "unitID"
+            },
+            "name": "field28",
+            "designerId": "78a281f0-ba69-4e03-86c8-75e07d3905dc"
+        }
+    ]
+}

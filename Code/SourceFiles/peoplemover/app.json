@@ -1,0 +1,81 @@
+{
+    "builds": {
+        "web": {"default": true},
+        "native": {
+            "packager": "cordova",
+            "cordova" : {
+                "config": {
+                    // Uncomment the line below and add the platforms you wish to build for
+                    "platforms": "android",
+
+                    "id": "gov.pinecrest-fl.myppm",
+                    "name": "MyPPM"
+                }
+            }
+        }
+    },
+
+                
+   "name": "PeopleMover",
+   "indexHtmlPath": "index.html",
+   "url": null,
+   "js": [
+      {
+         "path": "../sencha-touch.js",
+         "x-bootstrap": true
+      },      
+      {
+		"path": "https://maps.googleapis.com/maps/api/js?key=AIzaSyBY2230Zbv1ZOYHonUweXxDB_8k5P6gS2k",
+		"remote": true
+	  },
+	  {
+         "path": "resources/lib/md5.js"
+         
+      },
+      {
+         "path": "bootstrap.js",
+         "x-bootstrap": true
+      },
+      {
+         "path": "app.js",
+         "bundle": true,
+         "update": "delta"
+      }
+   ],
+   "css": [
+      {
+         "update": "delta",
+         "platform": [
+            "phone",
+            "tablet",
+            "desktop"
+         ],
+         "theme": "Default",
+         "path": "resources/css/sencha-touch-ccc92caf-3edd-40a7-b949-333b6cad7e99.css"
+      },
+      {
+            "path": "resources/css/loading.css",
+            "update": "delta"
+       }
+   ],
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [
+      "resources/images",
+      "resources/icons",
+      "resources/startup"
+   ],
+   "ignore": [
+      ".svn$"
+   ],
+   "archivePath": "archive",
+   "requires": [],
+   "id": "7606056e-bd15-4bbd-af98-0317190ef0f9"
+}

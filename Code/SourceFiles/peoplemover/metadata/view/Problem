@@ -1,0 +1,131 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "problem",
+        "designer|userClassName": "Problem",
+        "fullscreen": true
+    },
+    "name": "MyFormPanel",
+    "designerId": "3098e783-82f2-4708-92f3-624d0882be80",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null
+            },
+            "name": "MyFieldSet",
+            "designerId": "0be7bd7f-200f-4e8c-b196-66c69f00e747",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Name",
+                        "labelWrap": true,
+                        "name": "nameBox",
+                        "required": true
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "aafea705-971e-4737-b0b2-ad0344aedcd1"
+                },
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Email",
+                        "labelWrap": true,
+                        "name": "emailBox",
+                        "placeHolder": "email@example.com",
+                        "required": true
+                    },
+                    "name": "MyEmailField1",
+                    "designerId": "2183a7f9-afdf-41f3-afb9-0657d4b71e3d"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Report Issue",
+                        "labelWrap": true,
+                        "name": "infoBox",
+                        "required": true
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "a1f0e5fd-9c7c-48e4-8935-81eb38d2e66c"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "af32cbc5-d526-4c45-8524-02e1e6fa0dca",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": null,
+                                "height": 200,
+                                "id": "pictureBox",
+                                "itemId": "itemPictureBox",
+                                "src": "resources/images/camera.png",
+                                "width": 200
+                            },
+                            "name": "MyImg",
+                            "designerId": "56f37009-14ac-4a74-8959-b3566460f720"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "confirm",
+                "id": null,
+                "itemId": "bProbSubmit",
+                "text": "Submit",
+                "ui": "confirm"
+            },
+            "name": "MyButton6",
+            "designerId": "9bed9be5-3292-45d3-8a12-fa949c6a1955"
+        }
+    ]
+}

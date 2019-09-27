@@ -1,0 +1,28 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "routeInfo"
+    },
+    "name": "MyModel",
+    "designerId": "23111290-0328-43b9-8bd4-a9d64d6a92e6",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "route"
+            },
+            "name": "field",
+            "designerId": "5429ce9c-227e-49dd-989b-c538cfa05c04"
+        }
+    ]
+}

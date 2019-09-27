@@ -1,0 +1,117 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userAlias": "esttimeview",
+        "designer|userClassName": "EstTimeView",
+        "html": null,
+        "id": "esttimeview",
+        "scrollable": "vertical"
+    },
+    "name": "MyContainer",
+    "designerId": "8ef82987-cfd0-4b4c-9bf7-737a0674d400",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Stop Description ",
+                "tplWriteMode": null
+            },
+            "name": "MyFieldSet",
+            "designerId": "c8c1714a-cd3f-4209-885a-e4cb0a4c3f36",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": 1,
+                        "centered": false,
+                        "designer|uiInterfaceName": "action-round",
+                        "disabled": false,
+                        "height": "50px",
+                        "hidden": false,
+                        "iconAlign": "center",
+                        "iconCls": "favorites",
+                        "id": "bfavorite",
+                        "itemId": "bfavorite",
+                        "style": null,
+                        "text": "Save as Favorite<br>You Have To Log In",
+                        "ui": "action-round",
+                        "width": "100%"
+                    },
+                    "name": "MyButton",
+                    "designerId": "9366648f-7219-494e-8c91-4267fd990c30"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "",
+                        "height": 30,
+                        "ui": null
+                    },
+                    "name": "MySpacer",
+                    "designerId": "85715076-b558-460f-b762-3f1980ca7bd4"
+                },
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<tpl for=\".\"><br>",
+                            "<h3><b>Stop Name:</b></h3><h3>{street}</h3>",
+                            "    <h3><b>Scheduled Time:</b></h3><h3>{scheduledTime}</h3></tpl>"
+                        ]
+                    },
+                    "name": "tpl2",
+                    "designerId": "236c5b70-7fbd-423d-a867-854480c70aad"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "    if(localStorage.getItem(\"ppmtoken\")!==null)",
+                    "    {",
+                    "         var mybutton = this.down('#bfavorite');",
+                    "        mybutton.setText('Save as Favorite');",
+                    "        mybutton.enable();",
+                    "    }"
+                ]
+            },
+            "name": "initialize",
+            "designerId": "f82d910a-488d-4d26-8c55-7a4aec021777"
+        }
+    ]
+}

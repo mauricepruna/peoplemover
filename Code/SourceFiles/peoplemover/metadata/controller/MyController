@@ -1,0 +1,152 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController",
+        "stores": [
+            "listRoutes"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "61ffb653-7b0b-4839-b28b-323c8c421c50",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "list",
+                "selector": "main #myroutelist",
+                "xtype": null
+            },
+            "name": "list",
+            "designerId": "8a54f03f-83f4-408e-a800-29ebbe13f0dc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list",
+                "designer|targetType": "RouteDetailsList",
+                "fn": "onActivityListItemTap",
+                "implHandler": [
+                    "var sample = Ext.create('widget.DetailList');",
+                    "",
+                    "//Ext.getCmp('titleList').setTitle(MyApp.view.MyContainer.itemTpl);",
+                    "var view = Ext.getCmp('titleList');",
+                    "view.setTitle('Stops');",
+                    "//view.titlebar.setTitle('{route}');",
+                    "Ext.Viewport.remove(Ext.Viewport.getActiveItem(), true);",
+                    "Ext.Viewport.setActiveItem(sample);",
+                    "",
+                    "//            var sample = Ext.create('MyApp.view.RouteDetailsList');",
+                    ""
+                ],
+                "name": "itemtap"
+            },
+            "name": "onActivityListItemTap",
+            "designerId": "3dd03194-495b-4df6-a45d-9a59fc23ed87"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "listDetail",
+                "selector": "widget.DetailList"
+            },
+            "name": "listDetail",
+            "designerId": "fff88faf-8895-44cc-a254-08cb9e47e057"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "titleList",
+                "selector": "#titleList"
+            },
+            "name": "titleList",
+            "designerId": "132a3932-4929-4929-8a45-faf9a755b973"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "back",
+                "selector": "#backButton"
+            },
+            "name": "back",
+            "designerId": "cb5c4b4c-860c-44b0-9b5f-74957ab9174f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "aboutus",
+                "selector": "main #aboutUs"
+            },
+            "name": "aboutus",
+            "designerId": "cb3bd8de-c95a-4d1e-b3c9-030218e4f967"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "signIn",
+                "selector": "widget.signIn"
+            },
+            "name": "signIn",
+            "designerId": "4c368c25-33e4-480f-91ed-3e7ae5c2ce91"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showSignInForm",
+                "implHandler": [
+                    "var popup = Ext.create('Ext.Panel', {",
+                    "            html: 'popup',",
+                    "            hideOnMaskTap: true,",
+                    "            modal: true",
+                    "        });"
+                ]
+            },
+            "name": "showSignInForm",
+            "designerId": "03258e0a-c500-4439-a8b5-9b7060edcda3"
+        }
+    ]
+}

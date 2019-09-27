@@ -1,0 +1,33 @@
+/* _arch-vars-start */
+$badge-bg-color: rgba(204,0,0,1);
+$badge-bg-gradient: flat;
+$badge-radius: 1.2em;
+$button-gradient: flat;
+$list-active-color: ;
+$tabs-bar-gradient: linear;
+$tabs-bottom-active-gradient: linear;
+$tabs-dark: rgba(195,180,139,1);
+$tabs-dark-active-color: rgba(77,128,71,1);
+$tabs-light: rgba(242,245,247,1);
+$toolbar-base-color: rgba(195,180,139,1);
+$toolbar-gradient: linear;
+
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+
+/* _arch-other-start */
+/* ui mixin: untitled-ui-3 for of type: sencha-button-ui */
+$_arch_color: rgba(182,182,182,1);
+@include sencha-button-ui(
+  $ui-label:"untitled-ui-3",
+    $color: $_arch_color,
+    $gradient: $button-gradient
+);
+/* ui mixin: untitled-ui-4 for of type: sencha-button-ui */
+
+@include sencha-button-ui(
+  $ui-label:"untitled-ui-4",
+    $color: $active-color,
+    $gradient: $button-gradient
+);

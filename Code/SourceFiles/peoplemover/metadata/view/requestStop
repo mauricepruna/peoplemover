@@ -1,0 +1,112 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "requestStop",
+        "designer|userClassName": "requestStop",
+        "fullscreen": true
+    },
+    "name": "MyFormPanel",
+    "designerId": "aa691015-8560-4423-a5b8-7d8135dd3662",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null
+            },
+            "name": "MyFieldSet",
+            "designerId": "369507c2-64e8-4bad-9f97-0da217adb7e7",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Name",
+                        "labelWrap": true,
+                        "name": "nameBox",
+                        "required": true
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "e98591e5-0348-4747-8895-71f66da39899"
+                },
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Email",
+                        "labelWrap": true,
+                        "name": "emailBox",
+                        "placeHolder": "email@example.com",
+                        "required": true
+                    },
+                    "name": "MyEmailField1",
+                    "designerId": "35ff686c-f415-4352-920f-bf89bab13665"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Address of Stop",
+                        "labelWrap": true,
+                        "name": null,
+                        "required": true
+                    },
+                    "name": "MyTextField",
+                    "designerId": "616cd273-1cc0-4f65-aa6e-92289dfedb3c"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Reason for Stop",
+                        "labelWidth": "35%",
+                        "labelWrap": true,
+                        "name": "infoBox"
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "fad3f28b-3aa5-487a-bdd0-8f1e723b843f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "confirm",
+                "text": "Submit",
+                "ui": "confirm"
+            },
+            "name": "MyButton6",
+            "designerId": "fb38d8c1-6e6c-46ae-93b2-7b6d5bfa073b"
+        }
+    ]
+}

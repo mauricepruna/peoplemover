@@ -1,0 +1,37 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "unitlistview",
+        "designer|userClassName": "UnitListView",
+        "id": "unitlistview",
+        "onItemDisclosure": true,
+        "store": "UnitListStore"
+    },
+    "name": "MyList1",
+    "designerId": "ffee90c4-6fab-49c3-bbd9-adf2b9ae246b",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div>{unitID} | {lastEventDate} <br />",
+                    "    {lastLatitude} |{lastLongitude}<br />",
+                    "    {address}</div>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "3ef6c1ca-b993-4ca2-8a90-20641cecf5cb"
+        }
+    ]
+}

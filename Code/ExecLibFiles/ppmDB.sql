@@ -1,0 +1,601 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 10, 2014 at 12:09 PM
+-- Server version: 5.5.38-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `pmdb`
+--
+CREATE DATABASE IF NOT EXISTS `pmdb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `pmdb`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Alert`
+--
+
+DROP TABLE IF EXISTS `Alert`;
+CREATE TABLE IF NOT EXISTS `Alert` (
+  `AlertId` int(11) NOT NULL AUTO_INCREMENT,
+  `Message` varchar(140) DEFAULT NULL,
+  `InsertionTime` datetime DEFAULT NULL,
+  `User_token` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`AlertId`),
+  KEY `fk_Alert_User1_idx` (`User_token`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FavoriteStops`
+--
+
+DROP TABLE IF EXISTS `FavoriteStops`;
+CREATE TABLE IF NOT EXISTS `FavoriteStops` (
+  `email_flag` tinyint(1) DEFAULT NULL,
+  `DefinedTime` int(11) DEFAULT NULL,
+  `User_token` varchar(45) NOT NULL,
+  `Stops_ID` int(11) NOT NULL,
+  `Stops_RouteID` int(11) NOT NULL,
+  PRIMARY KEY (`User_token`,`Stops_ID`,`Stops_RouteID`),
+  KEY `fk_FavoriteStops_Stops1_idx` (`Stops_ID`,`Stops_RouteID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Location`
+--
+
+DROP TABLE IF EXISTS `Location`;
+CREATE TABLE IF NOT EXISTS `Location` (
+  `UnitID` varchar(10) NOT NULL,
+  `LastEventDate` datetime NOT NULL,
+  `Address` varchar(45) DEFAULT NULL,
+  `City` varchar(45) DEFAULT NULL,
+  `State` varchar(45) DEFAULT NULL,
+  `PostalCode` varchar(10) DEFAULT NULL,
+  `CountryCode` varchar(10) DEFAULT 'US',
+  `Latitude` varchar(45) DEFAULT NULL,
+  `Longitude` varchar(45) DEFAULT NULL,
+  `Heading` int(11) DEFAULT NULL,
+  `InsertionTime` datetime DEFAULT NULL,
+  PRIMARY KEY (`UnitID`,`LastEventDate`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Route`
+--
+
+DROP TABLE IF EXISTS `Route`;
+CREATE TABLE IF NOT EXISTS `Route` (
+  `RouteID` int(11) NOT NULL,
+  `Name` varchar(45) DEFAULT NULL,
+  `CreatedOn` date DEFAULT NULL,
+  PRIMARY KEY (`RouteID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- --------------------------------------------------------
+--
+-- Dumping data for table `Route`
+--
+
+INSERT INTO `Route` (`RouteID`, `Name`, `CreatedOn`) VALUES
+(1, 'middlesouth', NULL),
+(2, 'middlenorth', NULL),
+(3, 'highsouth', NULL),
+(4, 'highnorth', NULL),
+(5, 'middlesouthPM', NULL),
+(6, 'middlenorthPM', NULL),
+(7, 'highsouthPM', NULL),
+(8, 'highnorthPM', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Route_has_Units`
+--
+
+DROP TABLE IF EXISTS `Route_has_Units`;
+CREATE TABLE IF NOT EXISTS `Route_has_Units` (
+  `WatcherID` int(11) NOT NULL,
+  `RouteID` int(11) NOT NULL,
+  `Units_ID` int(11) NOT NULL,
+  `LastStop_ID` int(11) NOT NULL,
+  `ScheduledDate` varchar(45) DEFAULT NULL,
+  `ActivatedOn` varchar(45) DEFAULT NULL,
+  `ClosedOn` varchar(45) DEFAULT NULL,
+  `CreatedOn` varchar(45) DEFAULT NULL,
+  `StatusRoute` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`WatcherID`,`RouteID`,`Units_ID`,`LastStop_ID`),
+  KEY `fk_Route_has_Units_Units1_idx` (`Units_ID`),
+  KEY `fk_Route_has_Units_Stops1_idx` (`LastStop_ID`),
+  KEY `fk_Route_has_Units_Route1_idx` (`RouteID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Stops`
+--
+
+DROP TABLE IF EXISTS `Stops`;
+CREATE TABLE IF NOT EXISTS `Stops` (
+  `ID` int(11) NOT NULL,
+  `RouteID` int(11) NOT NULL,
+  `StopName` varchar(45) DEFAULT NULL,
+  `Street` varchar(45) DEFAULT NULL,
+  `City` varchar(45) DEFAULT NULL,
+  `State` varchar(45) DEFAULT NULL,
+  `PostalCode` varchar(10) DEFAULT NULL,
+  `CountryCode` varchar(10) DEFAULT 'US',
+  `Latitude` varchar(45) DEFAULT NULL,
+  `Longitude` varchar(45) DEFAULT NULL,
+  `Radius` varchar(45) DEFAULT NULL,
+  `Sequence` int(11) DEFAULT NULL,
+  `ScheduledArrive` varchar(45) DEFAULT NULL,
+  `RouteDay` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`,`RouteID`),
+  KEY `fk_Stops_Route1_idx` (`RouteID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- -----------------------------------------------------------
+--
+-- Dumping data for table `Stops`
+--
+
+INSERT INTO `Stops` (`ID`, `RouteID`, `StopName`, `Street`, `City`, `State`, `PostalCode`, `CountryCode`, `Latitude`, `Longitude`, `Radius`, `Sequence`, `ScheduledArrive`, `RouteDay`) VALUES
+(1, 1, NULL, '6180-6198 SW 133rd St', NULL, NULL, NULL, 'US', '25.647483', '-80.293608', NULL, NULL, '08:42:00', NULL),
+(1, 2, NULL, '9398 Ludlam Road', NULL, NULL, NULL, 'US', '25.683573', '-80.302963', NULL, NULL, '08:33:00', NULL),
+(1, 3, NULL, '6032 SW 126th St', NULL, NULL, NULL, 'US', '25.653751', '-80.290726', NULL, NULL, '06:45:00', NULL),
+(1, 4, NULL, '11899 SW 81st Road', NULL, NULL, NULL, 'US', '25.6590240992', '-80.3250152712', NULL, NULL, '06:45:00', NULL),
+(2, 1, NULL, '6900-6924 Chapman Field Drive', NULL, NULL, NULL, 'US', '25.6558421021', '-80.3060443644', NULL, NULL, '08:44:00', NULL),
+(2, 2, NULL, '9800 SW 73rd Ct', NULL, NULL, NULL, 'US', '25.679532', '-80.314043', NULL, NULL, '08:35:00', NULL),
+(2, 3, NULL, '12500 SW 60th Ct', NULL, NULL, NULL, 'US', '25.6555208275', '-80.2907881548', NULL, NULL, '06:45:00', NULL),
+(2, 4, NULL, '11701 SW 81st Road', NULL, NULL, NULL, 'US', '25.6624818826', '-80.323673971', NULL, NULL, '06:45:00', NULL),
+(3, 1, NULL, '12902 SW 69th Ave', NULL, NULL, NULL, 'US', '25.65084', '-80.305849', NULL, NULL, '08:45:00', NULL),
+(3, 2, NULL, '10405 SW 72nd Ave', NULL, NULL, NULL, 'US', '25.674107', '-80.310752', NULL, NULL, '08:37:00', NULL),
+(3, 3, NULL, '6180-6198 SW 133rd St', NULL, NULL, NULL, 'US', '25.647494', '-80.293618', NULL, NULL, '06:48:00', NULL),
+(3, 4, NULL, '11201-11299 SW 81st Road', NULL, NULL, NULL, 'US', '25.6660430105', '-80.3224079684', NULL, NULL, '06:46:00', NULL),
+(4, 1, NULL, '6600-6698 131st Street', NULL, NULL, NULL, 'US', '25.649399', '-80.301747', NULL, NULL, '08:45:00', NULL),
+(4, 2, NULL, '7000-7198 SW 106th St', NULL, NULL, NULL, 'US', '25.672299', '-80.309837', NULL, NULL, '08:38:00', NULL),
+(4, 3, NULL, '12920 SW 69th Ave', NULL, NULL, NULL, 'US', '25.650821', '-80.305839', NULL, NULL, '06:52:00', NULL),
+(4, 4, NULL, '11000-11198 Palmetto Road', NULL, NULL, NULL, 'US', '25.6684025323', '-80.3186694532', NULL, NULL, '06:47:00', NULL),
+(5, 1, NULL, '13150 SW 69th Ave', NULL, NULL, NULL, 'US', '25.648364', '-80.305749', NULL, NULL, '08:45:00', NULL),
+(5, 2, NULL, '10850-10948 SW 72nd Ave', NULL, NULL, NULL, 'US', '25.670036', '-80.310609', NULL, NULL, '08:38:00', NULL),
+(5, 3, NULL, '13400-13500 SW 69th Ave', NULL, NULL, NULL, 'US', '25.646497', '-80.30576', NULL, NULL, '06:52:00', NULL),
+(5, 4, NULL, '10645-10651 SW 77th Ave', NULL, NULL, NULL, 'US', '25.6719707343', '-80.3187991664', NULL, NULL, '06:47:00', NULL),
+(6, 1, NULL, '7112-7126 SW136th St', NULL, NULL, NULL, 'US', '25.644582', '-80.3079274921', NULL, NULL, '08:46:00', NULL),
+(6, 2, NULL, '7380 SW 109th Terr', NULL, NULL, NULL, 'US', '25.669180165', '-80.3146322712', NULL, NULL, '08:39:00', NULL),
+(6, 3, NULL, 'Palmetto Road', NULL, NULL, NULL, 'US', '25.6460907817', '-80.3178554723', NULL, NULL, '06:55:00', NULL),
+(6, 4, NULL, '7620 SW 104th St', NULL, NULL, NULL, 'US', '25.6738853359', '-80.3180466961', NULL, NULL, '06:48:00', NULL),
+(7, 1, NULL, '13152-13198 Palmetto Road', NULL, NULL, NULL, 'US', '25.6480353586', '-80.317927', NULL, NULL, '08:50:00', NULL),
+(7, 2, NULL, '7465-7473 SW 104th St', NULL, NULL, NULL, 'US', '25.6739356947', '-80.3180495509', NULL, NULL, '08:40:00', NULL),
+(7, 3, NULL, '13450 SW 79th Ave', NULL, NULL, NULL, 'US', '25.6456823936', '-80.3219068135', NULL, NULL, '06:56:00', NULL),
+(7, 4, NULL, '7380 SW 109th Terr', NULL, NULL, NULL, 'US', '25.6691567944', '-80.3146407759', NULL, NULL, '06:49:00', NULL),
+(8, 1, NULL, '13420 SW 77th Ave', NULL, NULL, NULL, 'US', '25.646221699', '-80.3178433092', NULL, NULL, '08:50:00', NULL),
+(8, 2, NULL, '11000-11198 Palmetto Road', NULL, NULL, NULL, 'US', '25.668315', '-80.318742', NULL, NULL, '08:42:00', NULL),
+(8, 3, NULL, '13480 SW 82nd Ave', NULL, NULL, NULL, 'US', '25.645143', '-80.3260105509', NULL, NULL, '06:57:00', NULL),
+(8, 4, NULL, '10600-10650 SW 71st Ave', NULL, NULL, NULL, 'US', '25.6722984323', '-80.3097962205', NULL, NULL, '06:51:00', NULL),
+(9, 1, NULL, '7898 SW 136th St', NULL, NULL, NULL, 'US', '25.644176', '-80.321875', NULL, NULL, '08:51:00', NULL),
+(9, 2, NULL, '11201 SW 72nd Ct', NULL, NULL, NULL, 'US', '25.666748', '-80.311489', NULL, NULL, '08:44:00', NULL),
+(9, 3, NULL, '8200 SW 134th St', NULL, NULL, NULL, 'US', '25.645908', '-80.326052', NULL, NULL, '06:57:00', NULL),
+(9, 4, NULL, '9801 SW 73rd Ave', NULL, NULL, NULL, 'US', '25.6795687976', '-80.3131923804', NULL, NULL, '06:53:00', NULL),
+(10, 1, NULL, '13590 SW 82nd Ave', NULL, NULL, NULL, 'US', '25.644079', '-80.325995', NULL, NULL, '08:51:00', NULL),
+(10, 2, NULL, '12085 SW 65th Ave', NULL, NULL, NULL, 'US', '25.65963', '-80.300045', NULL, NULL, '08:48:00', NULL),
+(10, 3, NULL, '8500-8524 SW 136th St', NULL, NULL, NULL, 'US', '25.644002', '-80.330064', NULL, NULL, '06:59:00', NULL),
+(10, 4, NULL, '9601 SW 72nd Ave', NULL, NULL, NULL, 'US', '25.681489181', '-80.3110085803', NULL, NULL, '06:55:00', NULL),
+(11, 1, NULL, '8500-8524 SW 136th St', NULL, NULL, NULL, 'US', '25.644002', '-80.33005', NULL, NULL, '08:52:00', NULL),
+(11, 2, NULL, '6737-6799 SW 120th St', NULL, NULL, NULL, 'US', '25.6596596461', '-80.3033876356', NULL, NULL, '08:50:00', NULL),
+(11, 3, NULL, '8300-8350 SW 132nd St', NULL, NULL, NULL, 'US', '25.6477211794', '-80.328999', NULL, NULL, '07:00:00', NULL),
+(11, 4, NULL, '11200 SW 64th Ave', NULL, NULL, NULL, 'US', '25.667104586', '-80.2983114874', NULL, NULL, '06:59:00', NULL),
+(12, 1, NULL, '8284 SW 130th St', NULL, NULL, NULL, 'US', '25.6496313136', '-80.3277621313', NULL, NULL, '08:54:00', NULL),
+(12, 2, NULL, '12201-12275 SW 77th Ave', NULL, NULL, NULL, 'US', '25.657377329', '-80.3182624577', NULL, NULL, '08:53:00', NULL),
+(12, 3, NULL, '13101-13199 SW 84th Ave', NULL, NULL, NULL, 'US', '25.6485911491', '-80.3302166356', NULL, NULL, '07:01:00', NULL),
+(12, 4, NULL, '6501-6599 SW 120th St', NULL, NULL, NULL, 'US', '25.6597609345', '-80.3000946692', NULL, NULL, '07:02:00', NULL),
+(13, 1, NULL, '12800 SW 82nd Place', NULL, NULL, NULL, 'US', '25.651449', '-80.327819', NULL, NULL, '08:54:00', NULL),
+(13, 2, NULL, '7430 SW 124th St', NULL, NULL, NULL, 'US', '25.6555876578', '-80.314551', NULL, NULL, '08:55:00', NULL),
+(13, 3, NULL, '8270 SW 130th St', NULL, NULL, NULL, 'US', '25.6496382241', '-80.3277598221', NULL, NULL, '07:02:00', NULL),
+(13, 4, NULL, '6718-6748 SW 120th St', NULL, NULL, NULL, 'US', '25.6596593913', '-80.3026990968', NULL, NULL, '07:05:00', NULL),
+(14, 1, NULL, '12801-12821 SW 80th Ave', NULL, NULL, NULL, 'US', '25.651545', '-80.324207', NULL, NULL, '08:55:00', NULL),
+(14, 2, NULL, '7360 SW 128th St', NULL, NULL, NULL, 'US', '25.6519123428', '-80.313006', NULL, NULL, '09:00:00', NULL),
+(14, 3, NULL, '12801 SW 82nd Place', NULL, NULL, NULL, 'US', '25.651391', '-80.327797', NULL, NULL, '07:02:00', NULL),
+(14, 4, NULL, '7400-7460 SW 118th St', NULL, NULL, NULL, 'US', '25.6611245056', '-80.3162657087', NULL, NULL, '07:10:00', NULL),
+(15, 1, NULL, '12500-12598 Palmetto Road', NULL, NULL, NULL, 'US', '25.6540890137', '-80.318163', NULL, NULL, '08:57:00', NULL),
+(15, 3, NULL, '7898 SW 124th St', NULL, NULL, NULL, 'US', '25.6553563423', '-80.3222878221', NULL, NULL, '07:05:00', NULL),
+(16, 1, NULL, '7360 SW 128th St', NULL, NULL, NULL, 'US', '25.6518985214', '-80.3129952712', NULL, NULL, '09:00:00', NULL),
+(16, 3, NULL, '7898 SW 122nd St', NULL, NULL, NULL, 'US', '25.6572313678', '-80.3223286442', NULL, NULL, '07:05:00', NULL),
+(17, 3, NULL, '7400-7460 SW 118th St', NULL, NULL, NULL, 'US', '25.6611197817', '-80.3161987288', NULL, NULL, '07:10:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Units`
+--
+
+DROP TABLE IF EXISTS `Units`;
+CREATE TABLE IF NOT EXISTS `Units` (
+  `ID` int(11) NOT NULL,
+  `UnitID` varchar(10) NOT NULL,
+  `LicencePlate` varchar(10) DEFAULT NULL,
+  `ShortName` varchar(10) DEFAULT NULL,
+  `Description` varchar(45) DEFAULT NULL,
+  `SerialNumber` varchar(45) DEFAULT NULL,
+  `IMEI` varchar(45) DEFAULT NULL,
+  `Address` varchar(45) DEFAULT NULL,
+  `City` varchar(45) DEFAULT NULL,
+  `State` varchar(45) DEFAULT NULL,
+  `CountryCode` varchar(10) DEFAULT 'US',
+  `PostalCode` varchar(10) DEFAULT NULL,
+  `LastEventCode` varchar(45) DEFAULT NULL,
+  `EventName` varchar(45) DEFAULT NULL,
+  `LastEventDate` datetime DEFAULT NULL,
+  `LastLatitude` varchar(45) DEFAULT NULL,
+  `LastLongitude` varchar(45) DEFAULT NULL,
+  `Speed` float DEFAULT NULL,
+  `Direction` varchar(45) DEFAULT NULL,
+  `DealerID` int(11) DEFAULT NULL,
+  `CompanyID` int(11) DEFAULT NULL,
+  `ContactName` varchar(45) DEFAULT NULL,
+  `IconPath` varchar(45) DEFAULT NULL,
+  `AssignedDriver` varchar(45) DEFAULT NULL,
+  `DriverID` int(11) DEFAULT NULL,
+  `LocalLastEventDatetxt` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `UnitID_UNIQUE` (`UnitID`),
+  UNIQUE KEY `LicencePlate_UNIQUE` (`LicencePlate`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+DROP TABLE IF EXISTS `User`;
+CREATE TABLE IF NOT EXISTS `User` (
+  `token` varchar(45) NOT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `admin` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`token`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Waypoints`
+--
+
+DROP TABLE IF EXISTS `Waypoints`;
+CREATE TABLE IF NOT EXISTS `Waypoints` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `StopID` int(11) NOT NULL,
+  `RouteID` int(11) NOT NULL,
+  `Latitude` varchar(45) DEFAULT NULL,
+  `Longitude` varchar(45) DEFAULT NULL,
+  `Wayorder` int(11) NOT NULL,
+  PRIMARY KEY (`ID`,`StopID`,`RouteID`),
+  KEY `fk_Route_ID_idx1` (`RouteID`,`StopID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=253 ;
+
+-- ---------------------------------------------------------
+--
+-- Dumping data for table `Waypoints`
+--
+
+INSERT INTO `Waypoints` (`ID`, `StopID`, `RouteID`, `Latitude`, `Longitude`) VALUES
+(1, 1, 1, '25.647483', '-80.293608'),
+(1, 1, 2, '25.683573', '-80.302963'),
+(1, 1, 3, '25.653751', '-80.290726'),
+(1, 1, 4, '25.6590240992', '-80.3250152712'),
+(1, 2, 1, '25.6558421021', '-80.3060443644'),
+(1, 2, 2, '25.679532', '-80.314043'),
+(1, 2, 3, '25.6555208275', '-80.2907881548'),
+(1, 2, 4, '25.6624818826', '-80.323673971'),
+(1, 3, 1, '25.65084', '-80.305849'),
+(1, 3, 2, '25.674107', '-80.310752'),
+(1, 3, 3, '25.647494', '-80.293618'),
+(1, 3, 4, '25.6660430105', '-80.3224079684'),
+(1, 4, 1, '25.649399', '-80.301747'),
+(1, 4, 2, '25.672299', '-80.309837'),
+(1, 4, 3, '25.650821', '-80.305839'),
+(1, 4, 4, '25.6684025323', '-80.3186694532'),
+(1, 5, 1, '25.648364', '-80.305749'),
+(1, 5, 2, '25.670036', '-80.310609'),
+(1, 5, 3, '25.646497', '-80.30576'),
+(1, 5, 4, '25.6719707343', '-80.3187991664'),
+(1, 6, 1, '25.644582', '-80.3079274921'),
+(1, 6, 2, '25.669180165', '-80.3146322712'),
+(1, 6, 3, '25.6460907817', '-80.3178554723'),
+(1, 6, 4, '25.6738853359', '-80.3180466961'),
+(1, 7, 1, '25.6480353586', '-80.317927'),
+(1, 7, 2, '25.6739356947', '-80.3180495509'),
+(1, 7, 3, '25.6456823936', '-80.3219068135'),
+(1, 7, 4, '25.6691567944', '-80.3146407759'),
+(1, 8, 1, '25.646221699', '-80.3178433092'),
+(1, 8, 2, '25.668315', '-80.318742'),
+(1, 8, 3, '25.645143', '-80.3260105509'),
+(1, 8, 4, '25.6722984323', '-80.3097962205'),
+(1, 9, 1, '25.644176', '-80.321875'),
+(1, 9, 2, '25.666748', '-80.311489'),
+(1, 9, 3, '25.645908', '-80.326052'),
+(1, 9, 4, '25.6795687976', '-80.3131923804'),
+(1, 10, 1, '25.644079', '-80.325995'),
+(1, 10, 2, '25.65963', '-80.300045'),
+(1, 10, 3, '25.644002', '-80.330064'),
+(1, 10, 4, '25.681489181', '-80.3110085803'),
+(1, 11, 1, '25.644002', '-80.33005'),
+(1, 11, 2, '25.6596596461', '-80.3033876356'),
+(1, 11, 3, '25.6477211794', '-80.328999'),
+(1, 11, 4, '25.667104586', '-80.2983114874'),
+(1, 12, 1, '25.6496313136', '-80.3277621313'),
+(1, 12, 2, '25.657377329', '-80.3182624577'),
+(1, 12, 3, '25.6485911491', '-80.3302166356'),
+(1, 12, 4, '25.6597609345', '-80.3000946692'),
+(1, 13, 1, '25.651449', '-80.327819'),
+(1, 13, 2, '25.6555876578', '-80.314551'),
+(1, 13, 3, '25.6496382241', '-80.3277598221'),
+(1, 13, 4, '25.6596593913', '-80.3026990968'),
+(1, 14, 1, '25.651545', '-80.324207'),
+(1, 14, 2, '25.6519123428', '-80.313006'),
+(1, 14, 3, '25.651391', '-80.327797'),
+(1, 15, 1, '25.6540890137', '-80.318163'),
+(1, 15, 3, '25.6553563423', '-80.3222878221'),
+(1, 16, 1, '25.6518985214', '-80.3129952712'),
+(1, 16, 3, '25.6572313678', '-80.3223286442'),
+(1, 17, 3, '25.6611197817', '-80.3161987288'),
+(2, 1, 1, '25.6505271502', '-80.2937345278'),
+(2, 1, 2, '25.6798987837', '-80.3027998492'),
+(2, 1, 3, '25.6555208275', '-80.2907881548'),
+(2, 1, 4, '25.6603132415', '-80.3246985749'),
+(2, 2, 1, '25.65084', '-80.305849'),
+(2, 2, 2, '25.6740180288', '-80.313812794'),
+(2, 2, 3, '25.6554724719', '-80.2938758413'),
+(2, 2, 4, '25.6633062949', '-80.3232882174'),
+(2, 3, 1, '25.6498051454', '-80.3058038664'),
+(2, 3, 2, '25.6741456784', '-80.3098485595'),
+(2, 3, 3, '25.6474746565', '-80.2955147857'),
+(2, 3, 4, '25.6664636662', '-80.3223543243'),
+(2, 4, 1, '25.6484898649', '-80.3017340529'),
+(2, 4, 2, '25.6722796605', '-80.3106609021'),
+(2, 4, 3, '25.646497', '-80.30576'),
+(2, 4, 4, '25.6702591717', '-80.3187338262'),
+(2, 5, 1, '25.6465070198', '-80.3057360529'),
+(2, 5, 2, '25.6692914123', '-80.3105853241'),
+(2, 5, 3, '25.6464776563', '-80.3067555635'),
+(2, 5, 4, '25.6738611618', '-80.3188411139'),
+(2, 6, 1, '25.644528804', '-80.3096901674'),
+(2, 6, 2, '25.6740199062', '-80.3148017143'),
+(2, 6, 3, '25.6470869813', '-80.3178747118'),
+(2, 6, 4, '25.6739530233', '-80.3168187283'),
+(2, 7, 1, '25.646221699', '-80.3178433092'),
+(2, 7, 2, '25.6739236077', '-80.3188814997'),
+(2, 7, 3, '25.6450440456', '-80.3219045952'),
+(2, 7, 4, '25.6692475853', '-80.3115879375'),
+(2, 8, 1, '25.6442824732', '-80.3177981756'),
+(2, 8, 2, '25.6666033837', '-80.3186003069'),
+(2, 8, 3, '25.645908', '-80.326052'),
+(2, 8, 4, '25.6741066653', '-80.3098766868'),
+(2, 9, 1, '25.644079', '-80.325995'),
+(2, 9, 2, '25.6669800847', '-80.3023994576'),
+(2, 9, 3, '25.6458209529', '-80.3301052818'),
+(2, 9, 4, '25.6796423857', '-80.3121833879'),
+(2, 10, 1, '25.644002', '-80.33005'),
+(2, 10, 2, '25.6579932087', '-80.3000186419'),
+(2, 10, 3, '25.643997164', '-80.3279911164'),
+(2, 10, 4, '25.6815993005', '-80.3078708777'),
+(2, 11, 1, '25.6476676508', '-80.3301979855'),
+(2, 11, 2, '25.6592631434', '-80.318330686'),
+(2, 11, 3, '25.6476824924', '-80.3301876826'),
+(2, 11, 4, '25.6633815096', '-80.2981720126'),
+(2, 12, 1, '25.651449', '-80.327819'),
+(2, 12, 2, '25.6555011469', '-80.3182065952'),
+(2, 12, 3, '25.64868303', '-80.3281973962'),
+(2, 12, 4, '25.6580201827', '-80.3000146669'),
+(2, 13, 1, '25.651545', '-80.324207'),
+(2, 13, 2, '25.6555924933', '-80.3141088995'),
+(2, 13, 3, '25.651391', '-80.327797'),
+(2, 13, 4, '25.6595809508', '-80.3063688433'),
+(2, 14, 1, '25.6527249097', '-80.3240675251'),
+(2, 14, 3, '25.6515070574', '-80.3262283717'),
+(2, 15, 1, '25.6517678953', '-80.3180642222'),
+(2, 15, 3, '25.6572313678', '-80.3223286442'),
+(2, 16, 3, '25.6591365353', '-80.3224337143'),
+(3, 1, 1, '25.6544367987', '-80.299590254'),
+(3, 1, 2, '25.679532', '-80.314043'),
+(3, 1, 4, '25.6609805199', '-80.3244035319'),
+(3, 2, 2, '25.674107', '-80.310752'),
+(3, 2, 3, '25.647494', '-80.293618'),
+(3, 2, 4, '25.6637898182', '-80.3230414542'),
+(3, 3, 1, '25.6499308759', '-80.3017622414'),
+(3, 3, 2, '25.672299', '-80.309837'),
+(3, 3, 3, '25.6518075302', '-80.2956735'),
+(3, 3, 4, '25.666541028', '-80.3204016761'),
+(3, 4, 1, '25.648364', '-80.305749'),
+(3, 4, 2, '25.670036', '-80.310609'),
+(3, 4, 4, '25.6719707343', '-80.3187991664'),
+(3, 5, 1, '25.6464489887', '-80.3066994299'),
+(3, 5, 2, '25.669180165', '-80.3146322712'),
+(3, 5, 3, '25.6446109747', '-80.3066460569'),
+(3, 5, 4, '25.6738853359', '-80.3180466961'),
+(3, 6, 1, '25.6482621405', '-80.3098006019'),
+(3, 6, 2, '25.6739356947', '-80.3180495509'),
+(3, 6, 3, '25.647149848', '-80.3181836298'),
+(3, 6, 4, '25.6740013714', '-80.3147695206'),
+(3, 7, 2, '25.668315', '-80.318742'),
+(3, 7, 3, '25.6449811778', '-80.3239676779'),
+(3, 7, 4, '25.6692572553', '-80.3105579692'),
+(3, 8, 1, '25.644176', '-80.321875'),
+(3, 8, 2, '25.666748', '-80.311489'),
+(3, 8, 4, '25.6740921586', '-80.3107725459'),
+(3, 9, 2, '25.6597102997', '-80.302096832'),
+(3, 9, 3, '25.644002', '-80.330064'),
+(3, 9, 4, '25.6796520549', '-80.3109173852'),
+(3, 10, 2, '25.6584042219', '-80.3010195698'),
+(3, 10, 3, '25.6477498606', '-80.3281498307'),
+(3, 10, 4, '25.6816573145', '-80.3046736846'),
+(3, 11, 1, '25.6477401889', '-80.3281331485'),
+(3, 11, 2, '25.657377329', '-80.3182624577'),
+(3, 11, 3, '25.6485911491', '-80.3302166356'),
+(3, 11, 4, '25.663343902', '-80.3022538475'),
+(3, 12, 2, '25.6555876578', '-80.314551'),
+(3, 12, 3, '25.6496115068', '-80.328222'),
+(3, 12, 4, '25.6582667907', '-80.3007420095'),
+(3, 13, 2, '25.6518932361', '-80.3139725708'),
+(3, 13, 4, '25.6595132552', '-80.3093836462'),
+(3, 14, 1, '25.6533100245', '-80.3240653069'),
+(3, 14, 3, '25.6552305044', '-80.3263012553'),
+(3, 15, 1, '25.6518985214', '-80.3129952712'),
+(3, 16, 3, '25.6593492932', '-80.3143097672'),
+(4, 1, 1, '25.6554160041', '-80.3011061661'),
+(4, 1, 4, '25.6617396654', '-80.3240441159'),
+(4, 2, 4, '25.6640896012', '-80.3229229524'),
+(4, 3, 1, '25.649399', '-80.301747'),
+(4, 3, 3, '25.6553665588', '-80.3010035133'),
+(4, 3, 4, '25.6666038854', '-80.3186211734'),
+(4, 5, 1, '25.6446355026', '-80.3066542963'),
+(4, 5, 3, '25.6442917983', '-80.3177910993'),
+(4, 6, 1, '25.6480353586', '-80.317927'),
+(4, 6, 3, '25.6468935451', '-80.3186052005'),
+(4, 6, 4, '25.6722995065', '-80.3147158764'),
+(4, 7, 3, '25.6452084689', '-80.3239869173'),
+(4, 7, 4, '25.6700501928', '-80.3106062477'),
+(4, 8, 4, '25.6777413065', '-80.3108856807'),
+(4, 9, 2, '25.6597489828', '-80.3000641815'),
+(4, 9, 4, '25.681489181', '-80.3110085803'),
+(4, 10, 2, '25.6586073103', '-80.3017469124'),
+(4, 10, 3, '25.6477211794', '-80.328999'),
+(4, 10, 4, '25.6817249975', '-80.3028926978'),
+(4, 11, 1, '25.6496192241', '-80.3282337361'),
+(4, 11, 4, '25.6610277989', '-80.3022162992'),
+(4, 12, 3, '25.6496382241', '-80.3277598221'),
+(4, 12, 4, '25.6585399932', '-80.3014130257'),
+(4, 13, 2, '25.6519123428', '-80.313006'),
+(4, 13, 4, '25.6593875349', '-80.3131065497'),
+(4, 14, 1, '25.654180438', '-80.3242369683'),
+(4, 14, 3, '25.6553563423', '-80.3222878221'),
+(4, 16, 3, '25.6611770616', '-80.3143719219'),
+(5, 1, 1, '25.6557520752', '-80.3019649369'),
+(5, 1, 4, '25.6624818826', '-80.323673971'),
+(5, 2, 4, '25.6643120207', '-80.3228854015'),
+(5, 3, 3, '25.6557727456', '-80.3019776191'),
+(5, 3, 4, '25.6684025323', '-80.3186694532'),
+(5, 5, 1, '25.644582', '-80.3079274921'),
+(5, 5, 3, '25.6460907817', '-80.3178554723'),
+(5, 6, 3, '25.6463857737', '-80.3191340597'),
+(5, 6, 4, '25.6691567944', '-80.3146407759'),
+(5, 7, 3, '25.645143', '-80.3260105509'),
+(5, 7, 4, '25.6700695327', '-80.3095440929'),
+(5, 8, 4, '25.6776977993', '-80.3131280074'),
+(5, 9, 2, '25.65963', '-80.300045'),
+(5, 10, 2, '25.658626652', '-80.3020772881'),
+(5, 10, 4, '25.6802649708', '-80.302839051'),
+(5, 11, 1, '25.6496313136', '-80.3277621313'),
+(5, 11, 4, '25.6597149983', '-80.3021224218'),
+(5, 12, 4, '25.6586040627', '-80.30180241'),
+(5, 13, 4, '25.6593391809', '-80.3143059611'),
+(5, 14, 1, '25.6547800524', '-80.3245968483'),
+(5, 16, 3, '25.6611197817', '-80.3161987288'),
+(6, 1, 1, '25.6559261549', '-80.3030087802'),
+(6, 2, 4, '25.6645392749', '-80.3229712322'),
+(6, 3, 3, '25.6559081409', '-80.3034667091'),
+(6, 6, 3, '25.6460569301', '-80.319550266'),
+(6, 7, 4, '25.6701227174', '-80.3091632192'),
+(6, 8, 4, '25.6795687976', '-80.3131923804'),
+(6, 10, 2, '25.6596517593', '-80.3021555361'),
+(6, 10, 4, '25.6777799885', '-80.3027639491'),
+(6, 11, 4, '25.6597609345', '-80.3000946692'),
+(6, 12, 4, '25.658610107', '-80.3020853831'),
+(6, 13, 4, '25.6611669494', '-80.3143547048'),
+(6, 14, 1, '25.6552829526', '-80.325005008'),
+(7, 1, 1, '25.6558421021', '-80.3060443644'),
+(7, 2, 4, '25.6647423529', '-80.3230034187'),
+(7, 3, 3, '25.6558211011', '-80.3060394115'),
+(7, 6, 3, '25.6458296406', '-80.320089854'),
+(7, 7, 4, '25.6702629313', '-80.309045202'),
+(7, 10, 2, '25.6596596461', '-80.3033876356'),
+(7, 10, 4, '25.6742603025', '-80.302645932'),
+(7, 12, 4, '25.6596690621', '-80.3021448556'),
+(7, 13, 4, '25.6611245056', '-80.3162657087'),
+(7, 14, 1, '25.6554957174', '-80.3182382586'),
+(8, 2, 4, '25.664959936', '-80.3229068592'),
+(8, 3, 3, '25.650821', '-80.305839'),
+(8, 6, 3, '25.6456990699', '-80.3210961464'),
+(8, 7, 4, '25.6704659995', '-80.3089271848'),
+(8, 10, 4, '25.6669885439', '-80.3024206316'),
+(8, 12, 4, '25.6596593913', '-80.3026990968'),
+(8, 14, 1, '25.6540890137', '-80.318163'),
+(9, 2, 4, '25.6654241121', '-80.322697647'),
+(9, 6, 3, '25.6456823936', '-80.3219068135'),
+(9, 7, 4, '25.6707077468', '-80.3089754646'),
+(9, 10, 4, '25.667104586', '-80.2983114874'),
+(10, 2, 4, '25.6660430105', '-80.3224079684'),
+(10, 7, 4, '25.6711719004', '-80.3090022867'),
+(11, 7, 4, '25.6717714295', '-80.3090130155'),
+(12, 7, 4, '25.671747255', '-80.3096674745'),
+(13, 7, 4, '25.6718584576', '-80.309764034'),
+(14, 7, 4, '25.6722984323', '-80.3097962205'),
+(252, 14, 4, '25.6611245056', '-80.3162657087');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Alert`
+--
+ALTER TABLE `Alert`
+  ADD CONSTRAINT `fk_Alert_User1` FOREIGN KEY (`User_token`) REFERENCES `User` (`token`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `FavoriteStops`
+--
+ALTER TABLE `FavoriteStops`
+  ADD CONSTRAINT `fk_FavoriteStops_Stops1` FOREIGN KEY (`Stops_ID`, `Stops_RouteID`) REFERENCES `Stops` (`ID`, `RouteID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_FavoriteStops_User1` FOREIGN KEY (`User_token`) REFERENCES `User` (`token`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `Location`
+--
+ALTER TABLE `Location`
+  ADD CONSTRAINT `fk_Location_1` FOREIGN KEY (`UnitID`) REFERENCES `Units` (`UnitID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `Route_has_Units`
+--
+ALTER TABLE `Route_has_Units`
+  ADD CONSTRAINT `fk_Route_has_Units_Units1` FOREIGN KEY (`Units_ID`) REFERENCES `Units` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Route_has_Units_Stops1` FOREIGN KEY (`LastStop_ID`) REFERENCES `Stops` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Route_has_Units_Route1` FOREIGN KEY (`RouteID`) REFERENCES `Route` (`RouteID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `Stops`
+--
+ALTER TABLE `Stops`
+  ADD CONSTRAINT `fk_Stops_Route1` FOREIGN KEY (`RouteID`) REFERENCES `Route` (`RouteID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `Waypoints`
+--
+ALTER TABLE `Waypoints`
+  ADD CONSTRAINT `fk_Route_ID` FOREIGN KEY (`RouteID`, `StopID`) REFERENCES `Stops` (`RouteID`, `ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,19 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "MapStore",
+        "model": "MapLocations",
+        "requires": [
+            "Ext.util.Sorter"
+        ],
+        "storeId": "MapStore"
+    },
+    "name": "MyStore",
+    "designerId": "e7963bb7-23d5-4a8d-ba33-ae29456e593d"
+}

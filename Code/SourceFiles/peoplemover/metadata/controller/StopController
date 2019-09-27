@@ -1,0 +1,148 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StopController",
+        "requires": [
+            "Ext.MessageBox"
+        ],
+        "views": [
+            "EstTimeView"
+        ]
+    },
+    "name": "MyController1",
+    "designerId": "017cf5a7-3ac9-40bc-a166-0eb34d3b099a",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "name": "mainView",
+            "designerId": "e830f7b5-c1e6-4022-83cc-233bf08204bd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #bmiddlenorth",
+                "designer|targetType": "Ext.Button",
+                "fn": "showMiddleNorthList",
+                "implHandler": [
+                    "    var stopList = Ext.create('widget.middlenorthview');",
+                    "    mainView = this.getMainView();",
+                    "",
+                    "    //navigate to Middle North Stop List",
+                    "    mainView.push({",
+                    "        xtype:\"middlenorthview\",",
+                    "        title: \"Middle North Stops\"",
+                    "    });"
+                ],
+                "name": "tap"
+            },
+            "name": "showMiddleNorthList",
+            "designerId": "644887e7-ef7f-426b-9129-e0ec41961fc6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "middlenorthview",
+                "designer|targetType": "MiddleNorthView",
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "/*// if (this.currentStop == record.data) {",
+                    "//             Ext.getCmp('viewport').setActiveItem(1);",
+                    "//             return;",
+                    "//         }",
+                    "// this.currentStop = record.data;",
+                    "// Ext.getCmp('viewport').setActiveItem(1);",
+                    "// Ext.getCmp('esttimeview').setData(this.currentStop);",
+                    "*/",
+                    "//var reportProblem = Ext.create('widget.esttimeview'),\t// Login form",
+                    "//mainView = this.getMainView();",
+                    "",
+                    "//Ext.Msg.alert(\"Info\",\"clicked\");",
+                    "//console.log(record.data);",
+                    "//Ext.getStore('MiddleNorthStore').clearFilter();",
+                    "//this.currentstop = record.get(\"street\");",
+                    "//Ext.getStore('MiddleNorthStore').filter(\"name\",this.currentstop);",
+                    "//console.log(dataview.title);",
+                    "",
+                    "var estTime = Ext.create('PeopleMover.view.EstTimeView',",
+                    "                        {",
+                    "                            title:\" Estimated Time\"",
+                    "                        });",
+                    "mainView.push(estTime);",
+                    "estTime.getAt(0).setTitle(dataview.title);",
+                    "",
+                    "estTime.getAt(0).setData(record.data);",
+                    "",
+                    "",
+                    "/*mainView.push(",
+                    "{",
+                    "    xtype: \"esttimeview\",",
+                    "    title: dataview.title +\"</br>\" +\" Estimated Time\",",
+                    "    data: record.getData()",
+                    "});*/",
+                    "",
+                    ""
+                ],
+                "name": "itemtap"
+            },
+            "name": "onListItemTap",
+            "designerId": "343b8d5a-e69f-407c-adab-97b92a1d25ef"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "esttimeview #bfavorite",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "if(localStorage.getItem(\"ppmtoken\")===null)",
+                    "    {",
+                    "        var mybutton = this.down('#bfavorite');",
+                    "                mybutton.setText('Save as Favorite');",
+                    "                mybutton.enable();",
+                    "           var loginForm = Ext.create('widget.loginform'),\t// Login form",
+                    "                    mainView = this.getMainView();\t\t\t\t// Main view",
+                    "",
+                    "                // Navigate to login",
+                    "                mainView.push({",
+                    "                    xtype: \"loginform\",",
+                    "                    title: \"Login\"",
+                    "                });",
+                    "",
+                    "    }"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "69f58e17-c230-40ce-8484-948a98e0cff8"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"route\": \"Palmetto High School North Route\"",
+            "    },",
+            "    {",
+            "        \"route\": \"Palmetto High School South Route\"",
+            "    },",
+            "    {",
+            "        \"route\": \"Palmetto Middle School North Route\"",
+            "    },",
+            "    {",
+            "        \"route\": \"Palmetto Middle School South Route\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "listRoutes",
+        "model": "routeInfo",
+        "storeId": "listRoutes"
+    },
+    "name": "MyStore",
+    "designerId": "827541cd-ccfa-41f5-b35f-54a76b6d3bdb"
+}

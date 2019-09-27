@@ -1,0 +1,100 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "registerform",
+        "designer|userClassName": "RegisterForm",
+        "requires": [
+            "Ext.form.FieldSet",
+            "Ext.field.Email",
+            "Ext.Button"
+        ]
+    },
+    "name": "LoginForm1",
+    "designerId": "4bac8be0-29e9-45d0-8423-9155919d6b62",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Register"
+            },
+            "name": "MyFieldSet1",
+            "designerId": "af52a097-ae24-475e-85c9-8204a665dced",
+            "cn": [
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Email",
+                        "labelWidth": "40%",
+                        "name": "email",
+                        "placeHolder": "email@example.com"
+                    },
+                    "name": "MyEmailField",
+                    "designerId": "504b3e6f-a80d-4122-82ba-6be7ad9ddcb7"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Password",
+                        "labelWidth": "40%",
+                        "name": "password"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "a14576bb-22d5-4ea9-94f6-5e4fbaf3cc64"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Confirmation",
+                        "labelWidth": "40%",
+                        "name": "confirmation"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "8c2d6282-eef6-41fc-a8cf-0bdfb9e61b6e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "confirm",
+                "itemId": "registerButton",
+                "margin": 20,
+                "padding": 8,
+                "text": "Register",
+                "ui": "confirm"
+            },
+            "name": "MyButton15",
+            "designerId": "f647dc03-5c20-4886-9636-3c6a6d590723"
+        }
+    ]
+}

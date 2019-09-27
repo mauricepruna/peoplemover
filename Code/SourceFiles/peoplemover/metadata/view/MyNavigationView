@@ -1,0 +1,53 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyNavigationView",
+        "id": null,
+        "itemId": "routeView"
+    },
+    "name": "MyNavigationView",
+    "designerId": "75b50ce4-7a85-4c85-b691-411d105cbc13",
+    "cn": [
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "RouteList",
+                "id": null,
+                "itemId": "myroutelist",
+                "onItemDisclosure": null,
+                "store": "listRoutes",
+                "triggerEvent": null
+            },
+            "name": "MyList",
+            "designerId": "26ab2c85-4b13-46d1-9e3c-62370ae624aa",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>{route}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "016c6ade-b4d4-414f-9df4-b585bf2c75af"
+                }
+            ]
+        }
+    ]
+}

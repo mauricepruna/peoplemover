@@ -1,0 +1,68 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "trolleyalerts",
+        "designer|userClassName": "TrolleyAlerts"
+    },
+    "name": "MyContainer4",
+    "designerId": "d1e32daf-2e21-4e25-b423-422e035e308f",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Trolley Alerts"
+            },
+            "name": "MyFieldSet",
+            "designerId": "387cee15-6ec6-4122-bb53-0d393d1d6aca",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "decline",
+                        "iconCls": null,
+                        "itemId": "bAlert",
+                        "text": "ALERTS",
+                        "ui": "decline",
+                        "width": "100%"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "eacc1aec-080e-4323-866e-1c4c161ff509"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "height": 259,
+                        "id": "alertfield",
+                        "label": "",
+                        "labelAlign": "top",
+                        "readOnly": true,
+                        "style": null
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "c2c507e9-14eb-4163-a9ba-569a5065f806"
+                }
+            ]
+        }
+    ]
+}

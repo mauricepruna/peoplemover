@@ -1,0 +1,34 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "middlenorthview",
+        "designer|userClassName": "MiddleNorthView",
+        "id": null,
+        "onItemDisclosure": true,
+        "store": "MiddleNorthStore"
+    },
+    "designerId": "3bde5ad3-96b1-40b0-8a63-59121a74ee1d",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div>{street}</div>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "08b03deb-ae8b-48e9-b843-1b1255e6d911"
+        }
+    ]
+}

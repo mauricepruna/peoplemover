@@ -1,0 +1,97 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "feedback",
+        "designer|userClassName": "FeedBackView",
+        "fullscreen": true
+    },
+    "name": "MyFormPanel1",
+    "designerId": "30a95818-6e87-42c5-b8f4-a00377865fe0",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null
+            },
+            "name": "MyFieldSet",
+            "designerId": "291b3833-a71b-45e5-ae61-7ef5602f38d0",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Name",
+                        "labelWrap": true,
+                        "name": "nameBox",
+                        "required": true
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "b433b5a8-a8ce-47df-a5af-351e0215ff2b"
+                },
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Email",
+                        "labelWrap": true,
+                        "name": "emailBox",
+                        "placeHolder": "email@example.com",
+                        "required": true
+                    },
+                    "name": "MyEmailField1",
+                    "designerId": "90419a05-cc20-4438-85ce-b62924b7f3d4"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Your Feedback",
+                        "labelWidth": "35%",
+                        "labelWrap": true,
+                        "name": "infoBox",
+                        "required": true
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "261de869-2861-4001-bbfe-c5d15c4fa952"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "confirm",
+                "text": "Submit",
+                "ui": "confirm"
+            },
+            "name": "MyButton6",
+            "designerId": "5d598f4d-6668-494d-ad84-e6914328dbf0"
+        }
+    ]
+}
