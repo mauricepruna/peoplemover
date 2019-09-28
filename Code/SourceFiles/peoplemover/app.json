@@ -25,7 +25,7 @@
          "x-bootstrap": true
       },      
       {
-		"path": "https://maps.googleapis.com/maps/api/js?key=AIzaSyBY2230Zbv1ZOYHonUweXxDB_8k5P6gS2k",
+		"path": "https://maps.googleapis.com/maps/api/js?key=",
 		"remote": true
 	  },
 	  {
